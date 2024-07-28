@@ -9,10 +9,6 @@ public abstract class User {
     this.role = role;
   }
 
-  public boolean isAuth(String password) {
-    return this.password.equals(password);
-  }
-
   public String getUsername() {
     return username;
   }
@@ -23,5 +19,9 @@ public abstract class User {
 
   public String getRole() {
     return role;
+  }
+
+  public boolean isAuthenticate(String username, String password) {
+    return this.username.equals(username) && this.password.equals(password);
   }
 }
