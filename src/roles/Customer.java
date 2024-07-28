@@ -1,9 +1,10 @@
-package models;
+package roles;
 
-public class Customer {
+public class Customer extends User {
   private String ID, name;
 
-  public Customer(String ID, String name) {
+  public Customer(String ID, String name, String username, String password) {
+    super(username, password, "Customer");
     this.ID = ID;
     this.name = name;
   }

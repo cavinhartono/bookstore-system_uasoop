@@ -1,11 +1,15 @@
 package models;
 
 public class Book {
+  private Category category;
+  private Publisher publisher;
   private String isbn, title, author;
   private int qty;
   private double price;
 
-  public Book(String isbn, String title, String author, int qty, double price) {
+  public Book(Category category, Publisher publisher, String isbn, String title, String author, int qty, double price) {
+    this.category = category;
+    this.publisher = publisher;
     this.isbn = isbn;
     this.title = title;
     this.author = author;
@@ -53,4 +57,25 @@ public class Book {
     this.price = price;
   }
 
+  public Category getCategory() {
+    return category;
+  }
+
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+
+  public Publisher getPublisher() {
+    return publisher;
+  }
+
+  public void setPublisher(Publisher publisher) {
+    this.publisher = publisher;
+  }
+
+  @Override
+  public String toString() {
+    return "Book [ISBN=" + isbn + ", Title=" + title + ", Author=" + author + ", Publisher=" + publisher.getName()
+        + ", Category=" + category.getName() + ", Price=" + price + ", Quantity=" + qty + "]";
+  }
 }

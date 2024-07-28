@@ -1,9 +1,14 @@
 package roles;
 
+import models.Book;
+import models.Bookstore;
+
 public interface Action {
-  void addProduct(String name, String productID, double price, int qty);
+  void showMenu();
 
-  void upgradeProductInQty(String productID, int amount);
+  void addBook(Bookstore bookstore, Book book);
 
-  void sellProduct(String productID, int qty);
+  void viewOrders(Bookstore bookstore);
+
+  void registerCustomer(Bookstore bookstore, Customer customer);
 }
